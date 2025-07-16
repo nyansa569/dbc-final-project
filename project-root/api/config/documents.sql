@@ -7,6 +7,7 @@ CREATE TABLE documents (
     property_details JSON NOT NULL,
     customer_details JSON NOT NULL,
     agents JSON,
+    user_id VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
