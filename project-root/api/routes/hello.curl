@@ -1,0 +1,273 @@
+
+http://localhost:8000/login
+
+{
+  "name": "Kofi Estate",
+  "email": "kofi1@example.com",
+  "password": "secret1234",
+  "phone": "0241234567",
+  "license_number": "LIC123456",
+  "role": "agent",                     
+  "profile_image": "null",
+  "bio": "Passionate about real estate",
+  "specialties": "Residential,Land",
+  "years_experience": 3
+}
+
+
+http://localhost:8000/properties/5006124154
+
+{
+  "name": "Beachside Cottage updated",
+  "location": "Cape Coast",
+  "type": "Cottage",
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "area": 950,
+  "description": "Cozy beach cottage with sea view.",
+  "price": 180000,
+  "status": "for sale",
+  "image": "https://example.com/images/cottage.jpg"
+}
+
+
+http://localhost:8000/projects/
+{
+  "title": "Roofing updated",
+  "description": "Installing roofing tiles and sealing",
+  "images": [
+    "https://example.com/roofing.jpg"
+  ],
+  "progress_status": "Pending"
+}
+
+http://localhost:8000/projects/2373736305
+
+{
+  "title": "New Coastal Mansion updated",
+  "description": "Modern coastal mansion with sea views",
+  "overall_status": "In Progress",
+  "property_name": "Sea Breeze Mansion",
+  "property_description": "Elegant 6-bedroom home with smart tech",
+  "property_images": [
+    "https://example.com/img1.jpg",
+    "https://example.com/img2.jpg"
+  ]
+}
+
+http://localhost:8000/offers-deals
+
+{
+  "customer_name": "Emma Johnson",
+  "customer_email": "emma.j@example.com",
+  "customer_phone": "+1 (555) 987-6543",
+  "offer_bid": 3200,
+  "property_name": "Modern Downtown Apartment",
+  "property_description": "Sleek modern apartment in the heart of downtown",
+  "property_price": 3500,
+  "date": "2023-05-18",
+  "status": "pending"
+}
+
+
+http://localhost:8000/news-feeds
+{
+  "title": "New Luxury Villa Listing in Malibu updated",
+  "category": "Property Post",
+  "content": "We are excited to announce a stunning new luxury villa listing in Malibu with ocean views and premium amenities.",
+  "author": "John Doe",
+  "time": "2023-05-10 14:30",
+  "images": [
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+  ],
+  "is_property": true,
+  "property_name": "Luxury Villa in Malibu",
+  "property_location": "Malibu, California",
+  "property_type": "Villa",
+  "bedrooms": 5,
+  "bathrooms": 4,
+  "area": 3200,
+  "price": 4500000,
+  "property_status": "for sale",
+  "availability": "Available"
+}
+
+
+
+http://localhost:8000/documents/9362063463
+
+{
+  "title": "Offer Letter - Suburban House updated",
+  "document_type": "Offer Letter",
+  "uploaded_by": "Robert Johnson",
+  "date": "2023-05-20",
+  "property_details": {
+    "name": "Cozy Suburban House",
+    "location": "Austin, Texas",
+    "type": "House",
+    "price": 550000
+  },
+  "customer_details": {
+    "name": "Michael Brown",
+    "email": "michael.b@example.com",
+    "phone": "+1 (555) 456-7890"
+  },
+  "agents": []
+}
+
+
+# DOCUMENTS API - REQUEST/RESPONSE EXAMPLES
+
+### 1. CREATE DOCUMENT (POST)
+Request:
+POST /documents HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Lease Agreement - Downtown Apartment",
+    "document_type": "Lease",
+    "user_id": "user12345",
+    "property_details": {
+        "name": "Luxury Apartment Downtown",
+        "location": "New York, NY",
+        "type": "Apartment",
+        "price": 3500
+    },
+    "customer_details": {
+        "name": "Alex Johnson",
+        "email": "alex.j@example.com",
+        "phone": "+1 (555) 123-4567"
+    }
+}
+
+Success Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "success": true,
+    "id": "0000000427"
+}
+
+Error Response (Missing Field):
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "error": "Missing required field: customer_details"
+}
+
+### 2. GET ALL DOCUMENTS
+Request:
+GET /documents HTTP/1.1
+
+Success Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+    {
+        "id": "0000000001",
+        "title": "Purchase Agreement - Villa Malibu",
+        "document_type": "Agreement",
+        "user_id": "user12345",
+        "date": "2023-05-10",
+        "property_details": {
+            "name": "Luxury Villa in Malibu",
+            "location": "Malibu, California",
+            "type": "Villa",
+            "price": 4500000
+        },
+        "customer_details": {
+            "name": "Sarah Williams",
+            "email": "sarah.w@example.com",
+            "phone": "+1 (555) 234-5678"
+        },
+        "created_at": "2023-05-10 14:32:10"
+    }
+]
+
+### 3. GET SINGLE DOCUMENT
+Request:
+GET /documents/0000000001 HTTP/1.1
+
+Success Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "id": "0000000001",
+    "title": "Purchase Agreement - Villa Malibu",
+    "document_type": "Agreement",
+    "user_id": "user12345",
+    "date": "2023-05-10",
+    "property_details": {
+        "name": "Luxury Villa in Malibu",
+        "location": "Malibu, California",
+        "type": "Villa",
+        "price": 4500000
+    },
+    "customer_details": {
+        "name": "Sarah Williams",
+        "email": "sarah.w@example.com",
+        "phone": "+1 (555) 234-5678"
+    },
+    "created_at": "2023-05-10 14:32:10"
+}
+
+Not Found Response:
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "error": "Document not found"
+}
+
+### 4. UPDATE DOCUMENT (PUT)
+Request:
+PUT /documents/0000000001 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Updated Purchase Agreement",
+    "property_details": {
+        "price": 4750000
+    }
+}
+
+Success Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "success": true
+}
+
+Error Response:
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "error": "Invalid JSON data"
+}
+
+### 5. DELETE DOCUMENT
+Request:
+DELETE /documents/0000000001 HTTP/1.1
+
+Success Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "success": true
+}
+
+Error Response:
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "error": "Document not found"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "nyady/project-root",
+    "autoload": {
+        "psr-4": {
+            "Nyady\\ProjectRoot\\": "api/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nyansafo",
+            "email": "nyansafoaffum@gmail.com"
+        },{
+            "name": "Kwabena ",
+            "email": "k@gmail.com"
+        }
+    ],
+    "require": {
+         "vlucas/phpdotenv": "^5.5",
+        "firebase/php-jwt": "^6.8"
+    }
+}

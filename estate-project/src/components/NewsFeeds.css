@@ -1,0 +1,300 @@
+/* LuxeEstate News Feed - Elegant Flex Column Design */
+
+.luxe-news-feed {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #2d3436;
+}
+
+.luxe-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(45, 52, 54, 0.1);
+}
+
+.luxe-header h1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #2d3436;
+}
+
+.luxe-header h1 span {
+  font-weight: 600;
+  color: #f8cd5a;
+}
+
+.luxe-subtitle {
+  font-size: 1.1rem;
+  color: #636e72;
+  letter-spacing: 0.5px;
+}
+
+.luxe-feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.luxe-feed-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), box-shadow 0.4s ease;
+}
+
+.luxe-feed-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.property-card {
+  border-left: 4px solid #f8cd5a;
+}
+
+.news-card {
+  border-left: 4px solid #4cb8c4;
+}
+
+.luxe-card-header {
+  padding: 1.8rem 1.8rem 0;
+}
+
+.luxe-card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.luxe-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.8rem;
+  background: #f1f2f6;
+  border-radius: 20px;
+  color: #2d3436;
+}
+
+.property-card .luxe-category {
+  background: rgba(248, 205, 90, 0.15);
+  color: #d4a017;
+}
+
+.news-card .luxe-category {
+  background: rgba(76, 184, 196, 0.15);
+  color: #2a7f8d;
+}
+
+.luxe-date {
+  font-size: 0.8rem;
+  color: #636e72;
+}
+
+.luxe-card-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  color: #2d3436;
+}
+
+.luxe-author {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin-bottom: 1.5rem;
+}
+
+.luxe-media-container {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.luxe-featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.luxe-feed-card:hover .luxe-featured-image {
+  transform: scale(1.05);
+}
+
+.luxe-card-content {
+  padding: 1.8rem;
+}
+
+.luxe-card-content p {
+  line-height: 1.7;
+  color: #2d3436;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.luxe-property-details {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(45, 52, 54, 0.08);
+  padding-top: 1.8rem;
+}
+
+.luxe-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.luxe-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.luxe-detail-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #636e72;
+  margin-bottom: 0.3rem;
+}
+
+.luxe-detail-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d3436;
+}
+
+.luxe-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(45, 52, 54, 0.08);
+}
+
+.luxe-price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.luxe-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.luxe-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.luxe-status.for-sale {
+  background: rgba(248, 205, 90, 0.15);
+  color: #d4a017;
+}
+
+.luxe-status.for-rent {
+  background: rgba(76, 184, 196, 0.15);
+  color: #2a7f8d;
+}
+
+.luxe-action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2d3436;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.luxe-action-button:hover {
+  background: #f8cd5a;
+  color: #2d3436;
+  transform: translateX(5px);
+}
+
+.luxe-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.luxe-action-button:hover .luxe-arrow {
+  transform: translateX(3px);
+}
+
+.luxe-card-footer {
+  display: flex;
+  border-top: 1px solid rgba(45, 52, 54, 0.08);
+  padding: 1rem 1.8rem;
+}
+
+.luxe-icon-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #636e72;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.luxe-icon-button:hover {
+  color: #f8cd5a;
+}
+
+.luxe-icon-button svg {
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .luxe-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .luxe-media-container {
+    height: 220px;
+  }
+  
+  .luxe-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .luxe-price-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .luxe-news-feed {
+    padding: 1.5rem 1rem;
+  }
+  
+  .luxe-card-header,
+  .luxe-card-content {
+    padding: 1.5rem;
+  }
+}

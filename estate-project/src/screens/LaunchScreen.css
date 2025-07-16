@@ -1,0 +1,16 @@
+.launch-screen {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Smooth scroll behavior for section transitions */
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 60px;
+  }
+}

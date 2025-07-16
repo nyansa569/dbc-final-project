@@ -1,0 +1,138 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 9000;
+  transition: all 0.4s ease-in-out;
+  background-color: #2c3e50; /* Dark blue-gray - professional real estate color */
+  font-family: 'Montserrat', sans-serif; /* Professional, clean font */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #e67e22; /* Accent border */
+}
+
+.navbar.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navbar.scrolled .navbar-logo {
+  color: #2c3e50;
+}
+
+.navbar-logo span {
+  color: #e67e22; /* Warm accent color for real estate */
+  margin-left: 5px;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.navbar-links button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navbar.scrolled .navbar-links button {
+  color: #2c3e50;
+}
+
+.navbar-links button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #e67e22;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-links button:hover::after {
+  width: 100%;
+}
+
+.navbar-links button:hover {
+  color: #e67e22;
+}
+
+.cta-button {
+  background-color: #e67e22; /* Warm call-to-action color */
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: 2px solid #e67e22;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+}
+
+/* Mobile menu styles */
+@media (max-width: 992px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar-container {
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+  
+  /* You would add a hamburger menu button here */
+}
+
+/* Add this to your HTML head for the font */
+/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> */
