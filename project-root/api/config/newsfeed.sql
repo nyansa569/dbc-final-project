@@ -17,7 +17,7 @@ CREATE TABLE news_feeds (
     area INT,
     price DECIMAL(12, 2),
     property_status VARCHAR(50),
-
+    user_id VARCHAR(100),
     availability VARCHAR(100),
 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
