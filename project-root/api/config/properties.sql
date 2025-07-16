@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS properties (
     description TEXT,
     price DECIMAL(12,2) NOT NULL,
     status ENUM('for sale', 'for rent') NOT NULL,
+    user_id VARCHAR(100),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
