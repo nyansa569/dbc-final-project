@@ -54,6 +54,7 @@ CREATE TABLE offers_deals (
     final_price DECIMAL(12, 2) DEFAULT NULL,
     date DATE,
     status VARCHAR(50) DEFAULT 'pending',
+    user_id VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
